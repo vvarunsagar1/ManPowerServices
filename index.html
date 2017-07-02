@@ -121,15 +121,15 @@
     <!-- /Home Slider -->
 
     <!-- Services -->
-    <div id="services" style="padding:50px 0px 50px 0px;" data-ng-mouseover="viewServiceSubmenu='false'">
+    <div id="services" style="padding:50px 0px 50px 0px;background: url('img/bg.jpg'); background-size:cover;" data-ng-mouseover="viewServiceSubmenu='false'">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-md-10 col-md-offset-1 div-header" style="color:black"> OUR SERVICES</div>
+          <div class="col-md-10 col-md-offset-1 div-header" style="color:white"> OUR SERVICES</div>
         </div>
         <div class="row">
           <div class="col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
-            <div class="row">
-              <div class="col-md-6 col-sm-12 col-xs-12" style="padding:20px;">
+            <div class="row" style="background-color:white;">
+              <div class="col-md-6 col-sm-12 col-xs-12" style="padding:20px;border:1px solid #2196F3;">
                 <div class="col-md-6 col-sm-6 col-xs-6">
                   <img src="img/services/1.jpg" alt="Staffing Solutions" style="border-radius:50%;width:100%;"/>
                 </div>
@@ -138,7 +138,7 @@
                   <span ng-click="setActiveServicesTab('staffing')"><a href="services.html" id="serviceItemDetailButton">LEARN MORE</a></span>
                 </div>
               </div>
-              <div class="col-md-6 col-sm-12 col-xs-12" style="padding:20px;">
+              <div class="col-md-6 col-sm-12 col-xs-12" style="padding:20px;border:1px solid #2196F3;">
                 <div class="col-md-6 col-sm-6 col-xs-6">
                   <img src="img/services/2.jpg" alt="Facility Management Services" style="border-radius:50%;width:100%;"/>
                 </div>
@@ -147,7 +147,7 @@
                   <span ng-click="setActiveServicesTab('facility')"><a href="services.html" id="serviceItemDetailButton">LEARN MORE</a></span>
                 </div>
               </div>
-              <div class="col-md-6 col-sm-12 col-xs-12" style="padding:20px;">
+              <div class="col-md-6 col-sm-12 col-xs-12" style="padding:20px;border:1px solid #2196F3;">
                 <div class="col-md-6 col-sm-6 col-xs-6">
                   <img src="img/services/3.jpg" alt="Real Estate Consultant" style="border-radius:50%;width:100%;"/>
                 </div>
@@ -156,7 +156,7 @@
                   <a href="services.html" ng-click="setActiveServicesTab('realEstate')" id="serviceItemDetailButton">LEARN MORE</a>
                 </div>
               </div>
-              <div class="col-md-6 col-sm-12 col-xs-12" style="padding:20px;">
+              <div class="col-md-6 col-sm-12 col-xs-12" style="padding:20px;border:1px solid #2196F3;">
                 <div class="col-md-6 col-sm-6 col-xs-6">
                   <img src="img/services/4.jpg" alt="Event Management Services" style="border-radius:50%;width:100%;"/>
                 </div>
@@ -169,11 +169,11 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-md-10 col-md-offset-1 div-header" style="color:black"> Industries We Serve</div>
+          <div class="col-md-10 col-md-offset-1 div-header" style="background-color:white;color:black;"> Industries We Serve</div>
         </div>
         <div class="row">
-          <div class="col-md-10 col-md-offset-1">
-            <iframe class="industriesScroller" height="300px;" frameborder="0" style="border:0" src="lib/slider0/standard.html" allowfullscreen></iframe>
+          <div class="col-md-10 col-md-offset-1" style="background-color:white;padding:10px;">
+            <iframe class="industriesScroller" height="180px;" frameborder="0" style="border:0" src="lib/slider0/standard.html" allowfullscreen></iframe>
           </div>
         </div>
       </div>
@@ -217,21 +217,21 @@
     <!-- /JobsPreview -->
 
     <!-- Contact Us -->
-    <div id="contact-us" data-ng-mouseover="viewServiceSubmenu='false'">
+    <div id="contact-us" style="background: url('img/bg1.jpg'); background-size:cover;" data-ng-mouseover="viewServiceSubmenu='false'">
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-10 col-md-offset-1" style="padding:10px;">
             <div class="row">
-              <div class="col-md-10 col-md-offset-1 div-header" style="color:black">REACH US</div>
+              <div class="col-md-10 col-md-offset-1 div-header" style="color:white">REACH US</div>
             </div>
             <div class="col-md-6">
               <!-- Google Maps -->
               <iframe width="100%" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/search?q=Dyaneshwar+Complex+Ground+Floor,+Juhu+Gaon,+Sector+11,+Vashi,+Mumbai,+Maharashtra&key=AIzaSyCFcywxqQCSP_xedCNJiRQRsPUqt_viJ8I" allowfullscreen></iframe>
               <!-- Google Maps -->
             </div>
-            <div class="col-md-6" style="padding:0px 20px 20px 20px;">
+            <div class="col-md-6" style="padding:0px 20px 0px 20px;background-color:rgba(255,255,255,0.8);">
               <div class="row">
-                <p id="heading-text">GET IN TOUCH</p>
+                <p id="heading-text" style="text-align:center;">GET IN TOUCH</p>
                 <form name="contactForm">
                   <div class="row" style="padding:10px;">
                     <div class="col-md-6" style="padding:10px;">
@@ -241,7 +241,7 @@
                       <input id="contact-form-inputs" type="text" ng-model="contactForm.email" placeholder="Email" required>
                     </div>
                   </div>
-                  <div class="row" style="padding:10px;">
+                  <div class="row" style="padding:5px;">
                     <div class="col-md-12">
                       <textarea id="contact-form-inputs" rows="3" style="width:100%;" ng-model="contactForm.message" placeholder="Message" required></textarea>
                     </div>
@@ -251,7 +251,7 @@
                   </div>
                 </form>
               </div>
-              <div class="row" style="padding:15px;">
+              <div class="row" style="padding:5px 15px 5px 15px;">
                 <div class="row" style="padding:5px;">
                   <div class="col-md-2 col-sm-2 col-xs-2 center">
                     <i class="material-icons" id="contactFormIcons">place</i>
