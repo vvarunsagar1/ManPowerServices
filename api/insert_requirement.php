@@ -47,13 +47,13 @@
       // Send mail
         $email_subject = "Your Enquiry - Reg";
 				$email_body = "<html><body>";
-				$email_body .= "Dear ".$name.",<br> We received your Requirement, Thank you for contacting us. We will reach you soon regarding your query.<br><br><strong>Thanks and Regards</strong><br>ABC Private Limited";
+				$email_body .= "Dear ".$person.",<br> We received your Requirement, Thank you for contacting us. We will reach you soon regarding your query.<br><br><strong>Thanks and Regards</strong><br>ABC Private Limited";
 				$email_body .='</body></html>';
 				$headers = $config["from_email"]. "\r\n";
 				$headers .= "MIME-Version: 1.0\r\n";
 				$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
-        $email_admin_body .= "Dear Sir,<br> We received a requirement from <strong>Mr.".$name."</strong>, The client query is <strong>".$message."</strong>";
+        $email_admin_body .= "Dear Sir,<br> We received a requirement from <strong>Mr.".$person."</strong>, The client query is <strong>".$enquiry."</strong>";
 
 				mail($email,$email_subject,$email_body,$headers);
         mail($config['to_email'], $email_subject, $email_admin_body, $headers);
