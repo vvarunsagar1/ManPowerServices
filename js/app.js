@@ -2,7 +2,7 @@ var app = angular.module('manPower',[]);
 
 app.run(function ($rootScope,$http) {
   //console.log('App Starts');
-  $rootScope.server="http://54.169.84.179/admin/api/";
+  $rootScope.server="http://54.169.84.179/api/";
   $rootScope.getIpURL = $rootScope.server+'get_ip.php';
   $rootScope.mobileMenu = 'hide';
   $http.get($rootScope.getIpURL).then(function(res) {
@@ -62,10 +62,8 @@ app.controller('HomeController', function($scope,$rootScope,$http) {
         } else if (res.data.status = 'N'){
           alert('Some Error Occured');
         }
-        //console.log('enquiryResponse', $scope.enquiryResponse);
       })
     })
-
   }
 
   $scope.fetchVisitors = function () {
@@ -117,7 +115,33 @@ app.controller('HomeController', function($scope,$rootScope,$http) {
 
 app.controller('ServicesController', function($scope,$rootScope,$http) {
   console.log('ServicesController');
-  $scope.jobs = [{"title": "HR Manager","company":"abc","location":"Mumbai","expMin":"1","expMax":"5","payMin":"3","payMax":"5","active":"20"},{"title": "Odoo ERP Developer","company":"def","location":"Delhi","expMin":"2","expMax":"4","payMin":"2","payMax":"4","active":"120"},{"title": "HR Manager","company":"abc","location":"Mumbai","expMin":"1","expMax":"5","payMin":"3","payMax":"5","active":"20"},{"title": "Odoo ERP Developer","company":"def","location":"Delhi","expMin":"2","expMax":"4","payMin":"2","payMax":"4","active":"120"},{"title": "HR Manager","company":"abc","location":"Mumbai","expMin":"1","expMax":"5","payMin":"3","payMax":"5","active":"20"},{"title": "Odoo ERP Developer","company":"def","location":"Delhi","expMin":"2","expMax":"4","payMin":"2","payMax":"4","active":"120"},{"title": "HR Manager","company":"abc","location":"Mumbai","expMin":"1","expMax":"5","payMin":"3","payMax":"5","active":"20"},{"title": "Odoo ERP Developer","company":"def","location":"Delhi","expMin":"2","expMax":"4","payMin":"2","payMax":"4","active":"120"}];
+  $scope.jobs = [{"title": "HR Manager","company":"abc pvt ltd","location":"Mumbai","expMin":"1","expMax":"5","payMin":"3","payMax":"5","active":"20"},{"title": "Odoo ERP Developer","company":"def pvt ltd","location":"Delhi","expMin":"2","expMax":"4","payMin":"2","payMax":"4","active":"120"},{"title": "HR Manager","company":"abc pvt ltd","location":"Mumbai","expMin":"1","expMax":"5","payMin":"3","payMax":"5","active":"20"},{"title": "Odoo ERP Developer","company":"def pvt ltd","location":"Delhi","expMin":"2","expMax":"4","payMin":"2","payMax":"4","active":"120"},{"title": "HR Manager","company":"abc pvt ltd","location":"Mumbai","expMin":"1","expMax":"5","payMin":"3","payMax":"5","active":"20"},{"title": "Odoo ERP Developer","company":"def pvt ltd","location":"Delhi","expMin":"2","expMax":"4","payMin":"2","payMax":"4","active":"120"},{"title": "HR Manager","company":"abc pvt ltd","location":"Mumbai","expMin":"1","expMax":"5","payMin":"3","payMax":"5","active":"20"},{"title": "Odoo ERP Developer","company":"def pvt ltd","location":"Delhi","expMin":"2","expMax":"4","payMin":"2","payMax":"4","active":"120"}];
+
+  $scope.addNewRequirement = function (requirementForm) {
+    $http.get($rootScope.getIpURL).then(function(res) {
+      $rootScope.ip = res.data.ip;
+      //console.log('ip',$rootScope.ip);
+      $scope.addNewRequirementURL = $rootScope.server + 'insert_requirement.php?ip=' + $rootScope.ip +
+                                                                                '&person=' + requirementForm.person +
+                                                                                '&companyName=' + requirementForm.companyName +
+                                                                                '&email=' + requirementForm.email +
+                                                                                '&city=' + requirementForm.city +
+                                                                                '&phone=' + requirementForm.phone +
+                                                                                '&enquiry=' + requirementForm.enquiry +
+                                                                                '&address=' + requirementForm.address +
+                                                                                '&sector=' + $rootScope.activeServicesTab;
+      //console.log($scope.addNewEnquiryURL);
+      $http.get($scope.addNewRequirementURL).then(function(res){
+        if(res.data.status == 'S'){
+           alert('Message Sent Successfully');
+           window.location.reload();
+        } else if (res.data.status = 'N'){
+          alert('Some Error Occured');
+        }
+      })
+    })
+  }
+
 })
 app.controller('loginController', function ($rootScope, $scope, $http) {
   //console.log('loginController');

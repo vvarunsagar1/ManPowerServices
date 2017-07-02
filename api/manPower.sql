@@ -1,6 +1,6 @@
 
 --
--- Database: `my_case_study`
+-- Database: `manpower`
 --
 
 -- --------------------------------------------------------
@@ -52,12 +52,27 @@ CREATE TABLE `requirements` (
   `email_id`       		varchar(100) NOT NULL,
   `mobile`    			  varchar(10) DEFAULT NULL,
   `person_name`  				    varchar(50) NOT NULL,
-  ``      		varchar(256) NOT NULL,
-  `img_url`           varchar(1000) DEFAULT NULL,
-  `user_type`   			char(1) NOT NULL,
-  `e_verify`   			  char(1) NOT NULL,
+  `company_name`      		varchar(256) NOT NULL,
+  `sector`      		varchar(256) NOT NULL,
+  `city`           varchar(50) DEFAULT NULL,
+  `enquiry`   			varchar(1000) NOT NULL,
+  `address`   			varchar(1000) NOT NULL,
   `CRTD_DT`       		datetime NOT NULL,
   `CRTD_IP`       		varchar(39) NOT NULL,
   `DEL_FLG`       		char(1) NOT NULL,
-  PRIMARY KEY(`id`),
+  PRIMARY KEY(`id`)
+)
+CREATE TABLE `resume` (
+  `id`       		int(4) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name`  				    varchar(50) NOT NULL,
+  `gender`       		varchar(1) NOT NULL,
+  `email_id`       		varchar(100) NOT NULL,
+  `city`           varchar(50) DEFAULT NULL,
+  `mobile`    			  varchar(10) DEFAULT NULL,
+  `key_skills`      		varchar(256) NOT NULL,
+  `resume`      		varchar(256) NOT NULL,
+  `CRTD_DT`       		datetime NOT NULL,
+  `CRTD_IP`       		varchar(39) NOT NULL,
+  `DEL_FLG`       		char(1) NOT NULL,
+  PRIMARY KEY(`id`)
 )
