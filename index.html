@@ -87,10 +87,10 @@
             <div class="row" style="text-align:left;">
               <div class="serviceSubmenu col-md-5 col-md-offset-6" data-ng-show="viewServiceSubmenu=='true'" data-ng-mouseleave="viewServiceSubmenu='false'">
                 <ul id="navSubmenu">
-                  <li ng-click="setActiveServicesTab('staffing')"><a href="services.html">STAFFING SOLUTION</a></li>
-                  <li ng-click="setActiveServicesTab('facility')"><a href="services.html">FACILITY MANAGEMENT SERVICES</a></li>
-                  <li ng-click="setActiveServicesTab('realEstate')"><a href="services.html">REAL ESTATE CONSULTANT</a></li>
-                  <li ng-click="setActiveServicesTab('events')"><a href="services.html">EVENT MANAGEMENT SERVICES</a></li>
+                  <a href="services.html"><li ng-click="setActiveServicesTab('staffing')">STAFFING SOLUTION</li></a>
+                  <a href="services.html"><li ng-click="setActiveServicesTab('facility')">FACILITY MANAGEMENT SERVICES</li></a>
+                  <a href="services.html"><li ng-click="setActiveServicesTab('realEstate')">REAL ESTATE CONSULTANT</li></a>
+                  <a href="services.html"><li ng-click="setActiveServicesTab('events')">EVENT MANAGEMENT SERVICES</li></a>
                 </ul>
               </div>
             </div>
@@ -99,13 +99,13 @@
         </div>
         <div class="center" data-ng-show="mobileMenu=='active'">
           <ul id="navSubmenu">
-            <li><a href="index.html#" ng-click="toggleMobileMenu()">HOME</a></li>
-            <li><a href="index.html#services" ng-click="toggleMobileMenu()">SERVICES</a></li>
-            <li ng-click="setActiveServicesTab('staffing')"><a href="services.html">STAFFING SOLUTION</a></li>
-            <li ng-click="setActiveServicesTab('facility')"><a href="services.html">FACILITY MANAGEMENT SERVICES</a></li>
-            <li ng-click="setActiveServicesTab('realEstate')"><a href="services.html">REAL ESTATE CONSULTANT</a></li>
-            <li ng-click="setActiveServicesTab('events')"><a href="services.html">EVENT MANAGEMENT SERVICES</a></li>
-            <li><a href="index.html#contact-us" ng-click="toggleMobileMenu()">CONTACT US</a></li>
+            <a href="index.html#" ng-click="toggleMobileMenu()"><li>HOME</li></a>
+            <a href="index.html#services" ng-click="toggleMobileMenu()"><li>SERVICES</li></a>
+            <a href="services.html"><li ng-click="setActiveServicesTab('staffing')">STAFFING SOLUTION</li></a>
+            <a href="services.html"><li ng-click="setActiveServicesTab('facility')">FACILITY MANAGEMENT SERVICES</li></a>
+            <a href="services.html"><li ng-click="setActiveServicesTab('realEstate')">REAL ESTATE CONSULTANT</li></a>
+            <a href="services.html"><li ng-click="setActiveServicesTab('events')">EVENT MANAGEMENT SERVICES</li></a>
+            <a href="index.html#contact-us" ng-click="toggleMobileMenu()"><li>CONTACT US</li></a>
           </ul>
         </div>
       </div>
@@ -129,38 +129,38 @@
         <div class="row">
           <div class="col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
             <div class="row">
-              <div class="col-md-6" style="padding:20px;">
-                <div class="col-md-6">
+              <div class="col-md-6 col-sm-12 col-xs-12" style="padding:20px;">
+                <div class="col-md-6 col-sm-6 col-xs-6">
                   <img src="img/services/1.jpg" alt="Staffing Solutions" style="border-radius:50%;width:100%;"/>
                 </div>
-                <div class="col-md-6 center">
+                <div class="col-md-6 col-sm-6 col-xs-6 center">
                   <p id="serviceItemDetailHead">Staffing Solutions</p>
                   <span ng-click="setActiveServicesTab('staffing')"><a href="services.html" id="serviceItemDetailButton">LEARN MORE</a></span>
                 </div>
               </div>
-              <div class="col-md-6" style="padding:20px;">
-                <div class="col-md-6">
+              <div class="col-md-6 col-sm-12 col-xs-12" style="padding:20px;">
+                <div class="col-md-6 col-sm-6 col-xs-6">
                   <img src="img/services/2.jpg" alt="Facility Management Services" style="border-radius:50%;width:100%;"/>
                 </div>
-                <div class="col-md-6 center">
+                <div class="col-md-6 col-sm-6 col-xs-6 center">
                   <p id="serviceItemDetailHead">Facility Management Services</p>
                   <span ng-click="setActiveServicesTab('facility')"><a href="services.html" id="serviceItemDetailButton">LEARN MORE</a></span>
                 </div>
               </div>
-              <div class="col-md-6" style="padding:20px;">
-                <div class="col-md-6">
+              <div class="col-md-6 col-sm-12 col-xs-12" style="padding:20px;">
+                <div class="col-md-6 col-sm-6 col-xs-6">
                   <img src="img/services/3.jpg" alt="Real Estate Consultant" style="border-radius:50%;width:100%;"/>
                 </div>
-                <div class="col-md-6 center">
+                <div class="col-md-6 col-sm-6 col-xs-6 center">
                   <p id="serviceItemDetailHead">Real Estate Consultant</p>
                   <a href="services.html" ng-click="setActiveServicesTab('realEstate')" id="serviceItemDetailButton">LEARN MORE</a>
                 </div>
               </div>
-              <div class="col-md-6" style="padding:20px;">
-                <div class="col-md-6">
+              <div class="col-md-6 col-sm-12 col-xs-12" style="padding:20px;">
+                <div class="col-md-6 col-sm-6 col-xs-6">
                   <img src="img/services/4.jpg" alt="Event Management Services" style="border-radius:50%;width:100%;"/>
                 </div>
-                <div class="col-md-6 center">
+                <div class="col-md-6 col-sm-6 col-xs-6 center">
                   <p id="serviceItemDetailHead">Event Management Services</p>
                   <a href="services.html" ng-click="setActiveServicesTab('events')" id="serviceItemDetailButton">LEARN MORE</a>
                 </div>
@@ -187,16 +187,16 @@
           <div class="col-md-10 col-md-offset-1">
             <div class="col-md-6 center">
               <div class="row" style="padding:10px;">
-                <img src="img/currentopenings2.png" alt="Current Jobs" />
+                <a href="jobs.html"><img src="img/currentopenings2.png" alt="Current Jobs" /></a>
               </div>
               <div class="row" style="padding:10px;">
-                <img src="img/postresume2.png" alt="Post Resume" />
+                <a href="jobs.html"><img src="img/postresume2.png" alt="Post Resume" /></a>
               </div>
               <div class="row" style="padding:10px;">
-                <img src="img/employersection2.png" alt="Post Requirement" />
+                <a href="services.html"><img src="img/employersection2.png" alt="Post Requirement" /></a>
               </div>
             </div>
-            <div class="col-md-6" style="padding:5px 5px 5px 5px;box-shadow:0px 2px 4px grey;">
+            <div class="col-md-6" style="padding:5px 5px 5px 5px;box-shadow:0px 2px 4px grey;background-color:white;">
               <div class="container-fluid">
                 <div class="row" style="height:420px;">
                   <h5 style="text-align:center;">FEATURE JOBS</h5>

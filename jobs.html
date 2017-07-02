@@ -85,10 +85,10 @@
             <div class="row" style="text-align:left;">
               <div class="serviceSubmenu col-md-5 col-md-offset-6" data-ng-show="viewServiceSubmenu=='true'" data-ng-mouseleave="viewServiceSubmenu='false'">
                 <ul id="navSubmenu">
-                  <li ng-click="setActiveServicesTab('staffing')"><a href="services.html">STAFFING SOLUTION</a></li>
-                  <li ng-click="setActiveServicesTab('facility')"><a href="services.html">FACILITY MANAGEMENT SERVICES</a></li>
-                  <li ng-click="setActiveServicesTab('realEstate')"><a href="services.html">REAL ESTATE CONSULTANT</a></li>
-                  <li ng-click="setActiveServicesTab('events')"><a href="services.html">EVENT MANAGEMENT SERVICES</a></li>
+                  <a href="services.html"><li ng-click="setActiveServicesTab('staffing')">STAFFING SOLUTION</li></a>
+                  <a href="services.html"><li ng-click="setActiveServicesTab('facility')">FACILITY MANAGEMENT SERVICES</li></a>
+                  <a href="services.html"><li ng-click="setActiveServicesTab('realEstate')">REAL ESTATE CONSULTANT</li></a>
+                  <a href="services.html"><li ng-click="setActiveServicesTab('events')">EVENT MANAGEMENT SERVICES</li></a>
                 </ul>
               </div>
             </div>
@@ -97,13 +97,13 @@
         </div>
         <div class="center" data-ng-show="mobileMenu=='active'">
           <ul id="navSubmenu">
-            <li><a href="index.html#" ng-click="toggleMobileMenu()">HOME</a></li>
-            <li><a href="index.html#services" ng-click="toggleMobileMenu()">SERVICES</a></li>
-            <li ng-click="setActiveServicesTab('staffing')"><a href="services.html">STAFFING SOLUTION</a></li>
-            <li ng-click="setActiveServicesTab('facility')"><a href="services.html">FACILITY MANAGEMENT SERVICES</a></li>
-            <li ng-click="setActiveServicesTab('realEstate')"><a href="services.html">REAL ESTATE CONSULTANT</a></li>
-            <li ng-click="setActiveServicesTab('events')"><a href="services.html">EVENT MANAGEMENT SERVICES</a></li>
-            <li><a href="index.html#contact-us" ng-click="toggleMobileMenu()">CONTACT US</a></li>
+            <a href="index.html#" ng-click="toggleMobileMenu()"><li>HOME</li></a>
+            <a href="index.html#services" ng-click="toggleMobileMenu()"><li>SERVICES</li></a>
+            <a href="services.html"><li ng-click="setActiveServicesTab('staffing')">STAFFING SOLUTION</li></a>
+            <a href="services.html"><li ng-click="setActiveServicesTab('facility')">FACILITY MANAGEMENT SERVICES</li></a>
+            <a href="services.html"><li ng-click="setActiveServicesTab('realEstate')">REAL ESTATE CONSULTANT</li></a>
+            <a href="services.html"><li ng-click="setActiveServicesTab('events')">EVENT MANAGEMENT SERVICES</li></a>
+            <a href="index.html#contact-us" ng-click="toggleMobileMenu()"><li>CONTACT US</li></a>
           </ul>
         </div>
       </div>

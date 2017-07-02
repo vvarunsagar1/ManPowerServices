@@ -37,6 +37,11 @@
   font-size: 18px;
 }
 
+p, a, span, li,div {
+  font-family: verdana;
+}
+
+
 /*------------------------------------------------------------------*/
 /*NavBar*/
 /*------------------------------------------------------------------*/
@@ -66,8 +71,8 @@ ul#myTopNavBarMenu li{
   font-weight:bold;
 }
 ul#myTopNavBarMenu li:hover{
-  color: #0077B5;
-  border-bottom:2px solid #0077B5;
+  color: #2196F3;
+  border-bottom:2px solid #2196F3;
 }
 ul#myTopNavBarMenu a{
   font-weight:bold;
@@ -85,10 +90,10 @@ ul#myTopNavBarMenu a:hover{
 
 #mobileMenuIcon {
     font-size: 30px;
-    border: 1px solid #0077B5;
+    border: 1px solid #2196F3;
     border-radius: 5px;
     padding: 5px;
-    background-color:#0077B5;
+    background-color:#2196F3;
     color:white;
 }
 
@@ -101,19 +106,27 @@ ul#navSubmenu {
   background-color: white;
   padding: 0px;
 }
+
 ul#navSubmenu li {
   padding: 5px 5px 5px 10px;
+  text-decoration: none;
+
 }
-ul#navSubmenu li a{
+
+ul#navSubmenu a li{
   color: black;
+  font-size: 12px;
 }
-ul#navSubmenu li:hover{
+
+ul#navSubmenu a li:hover{
   color: white;
   text-decoration: none;
-  background-color: #0077B5;
+  background-color: #2196F3;
 }
-ul#navSubmenu li a:hover{
+
+ul#navSubmenu a:hover{
   text-decoration: none;
+  color:white;
 }
 
 @media only screen and (max-width: 745px) {
@@ -152,7 +165,7 @@ Product and Services
 
 #serviceItemDetailButton {
   padding: 10px;
-  border: 1px solid #0077B5;
+  border: 1px solid #2196F3;
   color: black;
   text-decoration: none;
   font-size: 14px;
@@ -188,26 +201,26 @@ Product and Services
 }
 
 #contact-form-inputs:focus {
-  border-color: #0077B5;
+  border-color: #2196F3;
 }
 
 #contactFormSubmitButton {
     margin:12px;
     padding: 10px 20px 10px 20px;
-    border:1px solid #0077B5;
+    border:1px solid #2196F3;
     color:white;
-    background-color: #0077B5;
+    background-color: #2196F3;
     border-radius: 20px;
 }
 
 #contactFormSubmitButton:hover {
     background-color: white;
-    border:1px solid #0077B5;
-    color:#0077B5;
+    border:1px solid #2196F3;
+    color:#2196F3;
 }
 
 #contactFormIcons {
-    color: #0077B5;
+    color: #2196F3;
 }
 
 #requirement-form-inputs {
@@ -219,22 +232,22 @@ Product and Services
 }
 
 #requirement-form-inputs:focus {
-  border-color: #0077B5;
+  border-color: #2196F3;
 }
 
 #postRequirementFormSubmitButton {
     margin:12px;
     padding: 10px 20px 10px 20px;
-    border:1px solid #0077B5;
+    border:1px solid #2196F3;
     color:white;
-    background-color: #0077B5;
+    background-color: #2196F3;
     border-radius: 20px;
 }
 
 #postRequirementFormSubmitButton:hover {
     background-color: white;
-    border:1px solid #0077B5;
-    color:#0077B5;
+    border:1px solid #2196F3;
+    color:#2196F3;
 }
 /*--------------------------------------------------------------
 QuickNav
