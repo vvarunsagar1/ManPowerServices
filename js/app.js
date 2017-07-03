@@ -35,18 +35,18 @@ app.service('fileUpload', ['$http', function ($https) {
 }]);
 
 app.run(function ($rootScope,$http) {
-  console.log('App Starts');
-  // $rootScope.server="http://54.169.84.179/api/";
-  $rootScope.server="http://192.168.42.192/ManPowerServices/api/";
+  //console.log('App Starts');
+  $rootScope.server="http://54.169.84.179/api/";
+  // $rootScope.server="http://192.168.42.192/ManPowerServices/api/";
   $rootScope.getIpURL = $rootScope.server+'get_ip.php';
   $rootScope.mobileMenu = 'hide';
   $http.get($rootScope.getIpURL).then(function(res) {
     $rootScope.ip = res.data.ip;
-    console.log('ip',$rootScope.ip);
+    //console.log('ip',$rootScope.ip);
     $rootScope.monitorVisitorsURL = $rootScope.server + 'monitor_visitors.php?ip=' + $rootScope.ip;
     $http.get($rootScope.monitorVisitorsURL).then(function(res){
       $rootScope.monitorStats = res;
-      console.log('monitorStats', $rootScope.monitorStats);
+      //console.log('monitorStats', $rootScope.monitorStats);
     })
   })
 
@@ -54,20 +54,20 @@ app.run(function ($rootScope,$http) {
 	if(window.localStorage['activeServicesTab'] == '' || window.localStorage['activeServicesTab'] == null || window.localStorage['activeServicesTab'] == undefined) {
 		$rootScope.activeServicesTab = 'staffing';
 		window.localStorage['activeServicesTab'] = $rootScope.activeServicesTab;
-		console.log('activeServicesTab', $rootScope.activeServicesTab);
+		//console.log('activeServicesTab', $rootScope.activeServicesTab);
 	}
 	if(window.localStorage['activeServicesTab']){
 		$rootScope.activeServicesTab = window.localStorage['activeServicesTab'];
-		console.log('activeServicesTab', $rootScope.activeServicesTab);
+		//console.log('activeServicesTab', $rootScope.activeServicesTab);
 	}
   $rootScope.setActiveServicesTab = function (view) {
     $rootScope.activeServicesTab = view;
     window.localStorage['activeServicesTab'] = view;
-    console.log('localSetActiveServicesTab', window.localStorage['activeServicesTab']);
+    //console.log('localSetActiveServicesTab', window.localStorage['activeServicesTab']);
   }
 
   $rootScope.toggleMobileMenu = function () {
-    console.log('toggle');
+    //console.log('toggle');
     if ($rootScope.mobileMenu == 'hide') {
       $rootScope.mobileMenu = 'active';
     } else if ($rootScope.mobileMenu == 'active') {
@@ -81,14 +81,14 @@ app.run(function ($rootScope,$http) {
 });
 
 app.controller('HomeController', function($scope,$rootScope,$http) {
-  console.log('HomeController');
+  //console.log('HomeController');
 
   $scope.addNewEnquiry = function (formData) {
     $http.get($rootScope.getIpURL).then(function(res) {
       $rootScope.ip = res.data.ip;
-      console.log('ip',$rootScope.ip);
+      //console.log('ip',$rootScope.ip);
       $scope.addNewEnquiryURL = $rootScope.server + 'insert_enquiry.php?ip=' + $rootScope.ip +'&name=' + formData.name +'&email=' + formData.email +'&message=' + formData.message ;
-      console.log($scope.addNewEnquiryURL);
+      //console.log($scope.addNewEnquiryURL);
       $http.get($scope.addNewEnquiryURL).then(function(res){
         $scope.enquiryResponse = res;
         if(res.data.status == 'S'){
@@ -104,13 +104,13 @@ app.controller('HomeController', function($scope,$rootScope,$http) {
   $scope.fetchVisitors = function () {
     $http.get($rootScope.getIpURL).then(function(res) {
       $rootScope.ip = res.data.ip;
-      console.log('ip',$rootScope.ip);
+      //console.log('ip',$rootScope.ip);
       $scope.fetchVisitorsURL = $rootScope.server + "fetch_visitors.php?ip="+ $rootScope.ip;
-      console.log($scope.fetchVisitorsURL);
+      //console.log($scope.fetchVisitorsURL);
       $http.get($scope.fetchVisitorsURL).then(function(response) {
         $scope.visitors = response.data;
-        console.log('visitorsResponse', $scope.visitors);
-        console.log('length',$scope.visitors.length);
+        //console.log('visitorsResponse', $scope.visitors);
+        //console.log('length',$scope.visitors.length);
       });
     })
   }
@@ -119,12 +119,12 @@ app.controller('HomeController', function($scope,$rootScope,$http) {
   $scope.fetchEnquiries = function () {
     $http.get($rootScope.getIpURL).then(function(res) {
       $rootScope.ip = res.data.ip;
-      console.log('ip',$rootScope.ip);
+      //console.log('ip',$rootScope.ip);
       $scope.fetchEnquiryURL = $rootScope.server + "fetch_enquiries.php?ip="+ $rootScope.ip;
-      console.log($scope.fetchEnquiryURL);
+      //console.log($scope.fetchEnquiryURL);
       $http.get($scope.fetchEnquiryURL).then(function(response) {
         $scope.enquiries = response.data;
-        console.log('enquiriesResponse', $scope.enquiries);
+        //console.log('enquiriesResponse', $scope.enquiries);
       });
     })
   }
@@ -133,12 +133,12 @@ app.controller('HomeController', function($scope,$rootScope,$http) {
   $scope.fetchViews = function () {
     $http.get($rootScope.getIpURL).then(function(res) {
       $rootScope.ip = res.data.ip;
-      console.log('ip',$rootScope.ip);
+      //console.log('ip',$rootScope.ip);
       $scope.fetchViewsURL = $rootScope.server + "fetch_views.php?ip="+ $rootScope.ip;
-      console.log($scope.fetchViewsURL);
+      //console.log($scope.fetchViewsURL);
       $http.get($scope.fetchViewsURL).then(function(response) {
         $scope.views = response.data[0].views;
-        console.log('viewsResponse', $scope.views);
+        //console.log('viewsResponse', $scope.views);
       });
     })
   }
@@ -155,13 +155,13 @@ app.controller('HomeController', function($scope,$rootScope,$http) {
 });
 
 app.controller('ServicesController', function($scope,$rootScope,$http) {
-  console.log('ServicesController');
+  //console.log('ServicesController');
   $scope.jobs = [{"title": "HR Manager","company":"abc pvt ltd","location":"Mumbai","expMin":"1","expMax":"5","payMin":"3","payMax":"5","active":"20"},{"title": "Odoo ERP Developer","company":"def pvt ltd","location":"Delhi","expMin":"2","expMax":"4","payMin":"2","payMax":"4","active":"120"},{"title": "HR Manager","company":"abc pvt ltd","location":"Mumbai","expMin":"1","expMax":"5","payMin":"3","payMax":"5","active":"20"},{"title": "Odoo ERP Developer","company":"def pvt ltd","location":"Delhi","expMin":"2","expMax":"4","payMin":"2","payMax":"4","active":"120"},{"title": "HR Manager","company":"abc pvt ltd","location":"Mumbai","expMin":"1","expMax":"5","payMin":"3","payMax":"5","active":"20"},{"title": "Odoo ERP Developer","company":"def pvt ltd","location":"Delhi","expMin":"2","expMax":"4","payMin":"2","payMax":"4","active":"120"},{"title": "HR Manager","company":"abc pvt ltd","location":"Mumbai","expMin":"1","expMax":"5","payMin":"3","payMax":"5","active":"20"},{"title": "Odoo ERP Developer","company":"def pvt ltd","location":"Delhi","expMin":"2","expMax":"4","payMin":"2","payMax":"4","active":"120"}];
 
   $scope.addNewRequirement = function (requirementForm) {
     $http.get($rootScope.getIpURL).then(function(res) {
       $rootScope.ip = res.data.ip;
-      console.log('ip',$rootScope.ip);
+      //console.log('ip',$rootScope.ip);
       $scope.addNewRequirementURL = $rootScope.server + 'insert_requirement.php?ip=' + $rootScope.ip +
                                                                                 '&person=' + requirementForm.person +
                                                                                 '&companyName=' + requirementForm.companyName +
@@ -171,7 +171,7 @@ app.controller('ServicesController', function($scope,$rootScope,$http) {
                                                                                 '&enquiry=' + requirementForm.enquiry +
                                                                                 '&address=' + requirementForm.address +
                                                                                 '&sector=' + $rootScope.activeServicesTab;
-      console.log($scope.addNewRequirementURL);
+      //console.log($scope.addNewRequirementURL);
       $http.get($scope.addNewRequirementURL).then(function(res){
         if(res.data.status == 'S'){
            alert('Message Sent Successfully');
@@ -186,23 +186,23 @@ app.controller('ServicesController', function($scope,$rootScope,$http) {
 })
 
 app.controller('loginController', function ($rootScope, $scope, $http) {
-  console.log('loginController');
+  //console.log('loginController');
   $scope.login = function (loginProfile) {
     $scope.loginProfile = loginProfile;
     $http.get($rootScope.getIpURL).then(function(res) {
       $rootScope.ip = res.data.ip;
-      console.log('ip',$rootScope.ip);
+      //console.log('ip',$rootScope.ip);
       $rootScope.loginURL = $rootScope.server + 'login.php?ip=' + $rootScope.ip + '&email=' + $scope.loginProfile.email_id + '&password=' + $scope.loginProfile.password ;
-      console.log($rootScope.loginURL);
+      //console.log($rootScope.loginURL);
       $http.get($rootScope.loginURL).then(function(res){
         $rootScope.profile = res.data;
-        console.log(res);
+        //console.log(res);
         if ($rootScope.profile.status == 'IC'){
-          console.log('message', $rootScope.profile);
+          //console.log('message', $rootScope.profile);
           alert('Invalid Username or Password');
         }
         if ($rootScope.profile[0].DEL_FLG == 'N'){
-          console.log('profile', $rootScope.profile);
+          //console.log('profile', $rootScope.profile);
           if ($rootScope.profile[0].user_type == 'U'){
             window.localStorage['profile'] = JSON.stringify($rootScope.profile[0]);
             window.location.href = 'index.html';
@@ -220,9 +220,9 @@ app.controller('loginController', function ($rootScope, $scope, $http) {
     $scope.registerProfile = registerProfile;
     $http.get($rootScope.getIpURL).then(function(res) {
       $rootScope.ip = res.data.ip;
-      console.log('ip',$rootScope.ip);
+      //console.log('ip',$rootScope.ip);
       $rootScope.registerURL = $rootScope.server + 'register.php?ip=' + $rootScope.ip + '&email=' + $scope.registerProfile.email_id + '&password=' + $scope.registerProfile.password + '&name=' + $scope.registerProfile.name + '&mobile=' + $scope.registerProfile.mobile ;
-      console.log($rootScope.loginURL);
+      //console.log($rootScope.loginURL);
       $http.get($rootScope.registerURL).then(function(res){
         $rootScope.registerResponse = res.data;
         if ($rootScope.registerResponse.status == 'RS'){
@@ -237,14 +237,14 @@ app.controller('loginController', function ($rootScope, $scope, $http) {
 });
 
 app.controller('JobsController', function($scope, $rootScope, $http) {
-  console.log('JobsController');
+  //console.log('JobsController');
 
 
   $scope.addNewSkills = function (resumeForm) {
-    console.log('resumeForm');
+    //console.log('resumeForm');
     $http.get($rootScope.getIpURL).then(function(res) {
       $rootScope.ip = res.data.ip;
-      console.log('ip',$rootScope.ip);
+      //console.log('ip',$rootScope.ip);
       $scope.addNewSkillsURL = $rootScope.server + 'insert_skills.php?ip=' + $rootScope.ip +
                                                                                 '&name=' + resumeForm.name +
                                                                                 '&gender=' + resumeForm.gender +
@@ -252,7 +252,7 @@ app.controller('JobsController', function($scope, $rootScope, $http) {
                                                                                 '&city=' + resumeForm.city +
                                                                                 '&phone=' + resumeForm.phone +
                                                                                 '&skills=' + resumeForm.skills;
-      console.log($scope.addNewSkillsURL);
+      //console.log($scope.addNewSkillsURL);
       $http.get($scope.addNewSkillsURL).then(function(res){
         if(res.data.status == 'S'){
            alert('Message Sent Successfully');
