@@ -41,11 +41,12 @@
 				$headers = $config["from_email"]. "\r\n";
 				$headers .= "MIME-Version: 1.0\r\n";
 				$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-
+        $email_admin_body = "<html><body>";
         $email_admin_body .= "Dear Sir,<br> We received a message from <strong>Mr.".$name."</strong>, The customer query is <strong>".$message."</strong>";
+        $email_admin_body .='</body></html>';
 
 				mail($email,$email_subject,$email_body,$headers);
-                                mail($config['to_email'], $email_subject, $email_admin_body, $headers);
+        mail($config['to_email'], $email_subject, $email_admin_body, $headers);
 
     } else {
       $status = 'N';

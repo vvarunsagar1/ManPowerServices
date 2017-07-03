@@ -120,22 +120,22 @@
           <div class="col-md-10 col-md-offset-1" style="padding:10px 0px 10px 20px;box-shadow:0px 0px 4px grey;">
             <div class="col-md-6" style="padding:15px;">
               <div class="row center">
-                <div class="col-md-3" ng-click="setActiveServicesTab('staffing')" style="padding:10px 0px 0px 0px;">
+                <div class="col-md-3 col-md-3 col-xs-3" ng-click="setActiveServicesTab('staffing')" style="padding:10px 0px 0px 0px;">
                   STAFFING
                   <hr style="border-color:blue;" ng-show="activeServicesTab=='staffing'">
                   <hr ng-hide="activeServicesTab=='staffing'">
                 </div>
-                <div class="col-md-3" ng-click="setActiveServicesTab('facility')" style="padding:10px 0px 0px 0px;">
+                <div class="col-md-3 col-md-3 col-xs-3" ng-click="setActiveServicesTab('facility')" style="padding:10px 0px 0px 0px;">
                   FACILITY
                   <hr style="border-color:blue;" ng-show="activeServicesTab=='facility'">
                   <hr ng-hide="activeServicesTab=='facility'">
                 </div>
-                <div class="col-md-3" ng-click="setActiveServicesTab('realEstate')" style="padding:10px 0px 0px 0px;">
+                <div class="col-md-3 col-md-3 col-xs-3" ng-click="setActiveServicesTab('realEstate')" style="padding:10px 0px 0px 0px;">
                   REAL ESTATE
                   <hr style="border-color:blue;" ng-show="activeServicesTab=='realEstate'">
                   <hr ng-hide="activeServicesTab=='realEstate'">
                 </div>
-                <div class="col-md-3" ng-click="setActiveServicesTab('events')" style="padding:10px 0px 0px 0px;">
+                <div class="col-md-3 col-md-3 col-xs-3" ng-click="setActiveServicesTab('events')" style="padding:10px 0px 0px 0px;">
                   EVENTS
                   <hr style="border-color:blue;" ng-show="activeServicesTab=='events'">
                   <hr ng-hide="activeServicesTab=='events'">
@@ -256,7 +256,7 @@
             <li><a href="index.html">Company Profile</a></li> |
             <li><a href="index.html">Vision & Mission </a></li> |
             <li><a href="jobs.html">Current Jobs </a></li> |
-            <li><a href="jobs.html">Post Resume </a></li> |
+            <li><a href="jobs.html">Post Skills </a></li> |
             <li><a href="#">Post Job Requirement </a></li> |
             <li><a href="index.html#contact-us">Contact Us </a></li> |
             <li><a href="index.html#contact-us">Enquiry</a></li>
@@ -266,17 +266,17 @@
     </div>
     <!-- /QuickNav -->
     <!-- Footer -->
-    <div id="footer" data-ng-mouseover="viewServiceSubmenu='false'">
+    <div id="footer" data-ng-mouseover="viewServiceSubmenu='false'" data-ng-controller="HomeController">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-md-4 col-sm-12 col-xs-12">
+          <div class="col-md-4 col-sm-12 col-xs-12" style="padding:10px">
             <span class="white" style="font-size:20px;">ABOUT US</span>
             <hr style="border-color: #0077B5;">
             <div class="row">
               ManPower Services provide a wide range of Recruitment Solutions for various requirements. Located in Mumbai city of Maharashtra, the company was incepted in the year 2007. With an experience of serving industries like Insurance, Event Management etc, we are today recognized as a trustworthy Service Provider in Maharashtra.
             </div>
           </div>
-          <div class="col-md-4 col-sm-12 col-xs-12">
+          <div class="col-md-4 col-sm-12 col-xs-12" style="padding:10px">
             <span class="white" style="font-size:20px;">INFORMATION</span>
             <hr style="border-color: #0077B5;">
             <div class="row left">
@@ -292,7 +292,7 @@
               <p>Visitor No. {{views}}</p>
             </div>
           </div>
-          <div class="col-md-4 col-sm-12 col-xs-12">
+          <div class="col-md-4 col-sm-12 col-xs-12" style="padding:10px">
             <div class="row">
               <span class="white" style="font-size:20px;">CONTACT INFO</span>
               <hr style="border-color: #0077B5;">

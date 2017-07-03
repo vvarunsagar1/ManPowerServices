@@ -32,7 +32,7 @@
     $query->bindParam(":email", $email);
     $query->bindParam(":phone", $phone);
     $query->bindParam(":person", $person);
-    $query->bindParam(":phone", $companyName);
+    $query->bindParam(":company", $companyName);
     $query->bindParam(":sector", $sector);
     $query->bindParam(":city", $city);
     $query->bindParam(":enquiry", $enquiry);
@@ -40,9 +40,9 @@
     $query->bindParam(":ip", $ip);
     $query->bindParam(":del_flg", $del_flg);
 
-    // if ($query->execute()) {
-      // $status = 'S';
-    //   $last_id = $dbc->lastInsertId();
+    if ($query->execute()) {
+      $status = 'S';
+      $last_id = $dbc->lastInsertId();
 
       // Send mail
         $email_subject = "Your Enquiry - Reg";
@@ -52,15 +52,16 @@
 				$headers = $config["from_email"]. "\r\n";
 				$headers .= "MIME-Version: 1.0\r\n";
 				$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-
+        $email_admin_body = "<html><body>";
         $email_admin_body .= "Dear Sir,<br> We received a requirement from <strong>Mr.".$person."</strong>, The client query is <strong>".$enquiry."</strong>";
+        $email_admin_body .='</body></html>';
 
 				mail($email,$email_subject,$email_body,$headers);
         mail($config['to_email'], $email_subject, $email_admin_body, $headers);
 
-    // } else {
-      // $status = 'N';
-    // }
+    } else {
+      $status = 'N';
+    }
   }
   message:
    echo '{"page":"'.$page.'","status":"'.$status.'"}';

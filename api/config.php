@@ -3,7 +3,8 @@
  $config["database"] = "manpower";
  $config["host"]= "localhost";
  $config["username"]= "root";
- $config["password"]= "mydb";
+ // $config["password"]= "mydb";
+ $config["password"]= "";
 
  $config["from_email"] = 'From: ManPower Services<abctestpvtltd@gmail.com>';
  $config["to_email"] = 'Reply-To: ManPower Services <abctestpvtltd@gmail.com>';
