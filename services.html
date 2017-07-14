@@ -60,7 +60,7 @@
       <div class="row">
         <div class="myTopNavBar">
           <div class="col-md-2 col-sm-4 col-xs-4" style="text-align:center;">
-            <img src="img/logo.jpg" alt="Brume Solutions" style="width:100%;height:100px;"/>
+            <img src="img/logo.jpg" alt="Brume Solutions" style="width:75%;height:100px;"/>
           </div>
           <div class="col-md-6 col-md-offset-4 col-sm-8 col-xs-8" style="text-align:right;">
             <div class="row" style="padding:0px;">
@@ -143,12 +143,11 @@
               </div>
               <div class="row" style="padding:15px;" ng-show="activeServicesTab=='staffing'">
                 <h5>Staffing Solutions</h5>
-                <p>Located in Mumbai, the company is successfully serving several companies all over the country with comprehensive Staffing Solutions. Owing to our well-knitted network across the nation, we are capable to meet the requirements for staff for several companies.</p>
-                <p>From fresher to experienced, and young to old, we can successfully meet the requirements of the companies within the committed time. We understand that every company has its own business policies and terms & conditions; therefore, to respect that, we work as per them and offer them the Staffing Solutions that best caters their requirements.</p>
+                <p>Get all manpower at one place for your business and fill your organization with full of talent who help in growing your organization to the next level</p>
               </div>
               <div class="row" style="padding:15px;" ng-show="activeServicesTab=='facility'">
                 <h5>Facility Management Services</h5>
-                <p>Located in Mumbai, the company holds specialization in providing comprehensive Facility Management Services across the country. In day-to-day activity, many things back the management and support in meeting the set objectives of the company. These things are routine maintenance and repairing work of several facilities. Backed by technically trained employees, we provide comprehensive Facility Management Services to ensure utmost satisfaction to the clients.</p>
+                <p>Need people for housekeeping or managing other utilities for your organization ? Spark Consultancy help you bring them in no time.</p>
                 <p>Our Facility Management Services include:</p>
                 <ul>
                   <li>Painting</li>
@@ -168,13 +167,18 @@
               </div>
               <div class="row" style="padding:15px;" ng-show="activeServicesTab=='events'">
                 <h5>Event Management Services</h5>
-                <p>Any event needs a long planning, preparation and scheduling right from the very beginning. In fact, these are the factors, which help in the smooth running of an event. Events like birthdays, family gatherings, weddings and official events like award shows, product endorsement and launch all needs a detailed planning even if it is a small event or a big one.</p>
-                <p>We offer our comprehensive Event Management Services for Wedding party, birthday party, award ceremonies, fashion show, musical concerts, opening & inauguration, conference & seminars, exhibitions, etc. </p>
-                <p>Before planning an event, the first and foremost thing, which should be kept in mind, is the budget limitations. Budget is what matters most the most and before organizing any event, we always understand the budget limit of the clients. The secret behind the success of an event lies in understanding the needs and desires of the guests and besides numerous other reasons like planning on time, understanding the clients’ requirement and so on.</p>
+                <p>Need resources to manage events like cultural, IT, business seminars or Bollywood. Spark consultancy help you providing hustle free management in your budget.</p>
               </div>
             </div>
             <div class="col-md-6" style="border-left:1px solid #CCCCCC;">
               <div id="formCard" style="padding:10px 20px 10px 20px;text-align:center;">
+                <div class="alert alert-success" ng-show="requirementResponse.data.status=='S'">
+                  <strong>Success!</strong> Message Sent Successfully.
+                </div>
+                <div class="alert alert-danger" ng-show="requirementResponse.data.status=='N'">
+                  <strong>Sorry!</strong> Some Error Occured, Please Try Again!
+                </div>
+
                 <h5>Post Your Requirement</h5>
                 <hr>
                 <form name="PostRequirementForm" style="text-align:left;">

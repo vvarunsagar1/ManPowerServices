@@ -91,12 +91,12 @@ app.controller('HomeController', function($scope,$rootScope,$http) {
       //console.log($scope.addNewEnquiryURL);
       $http.get($scope.addNewEnquiryURL).then(function(res){
         $scope.enquiryResponse = res;
-        if(res.data.status == 'S'){
-           alert('Message Sent Successfully');
-           window.location.reload();
-        } else if (res.data.status == 'N'){
-          alert('Some Error Occured');
-        }
+        // if(res.data.status == 'S'){
+        //    alert('Message Sent Successfully');
+        //    window.location.reload();
+        // } else if (res.data.status == 'N'){
+        //   alert('Some Error Occured');
+        // }
       })
     })
   }
@@ -173,12 +173,11 @@ app.controller('ServicesController', function($scope,$rootScope,$http) {
                                                                                 '&sector=' + $rootScope.activeServicesTab;
       //console.log($scope.addNewRequirementURL);
       $http.get($scope.addNewRequirementURL).then(function(res){
-        if(res.data.status == 'S'){
-           alert('Message Sent Successfully');
-           window.location.reload();
-        } else if (res.data.status == 'N'){
-          alert('Some Error Occured');
-        }
+        $scope.requirementResponse = res;
+        // if(res.data.status == 'S'){
+        // } else if (res.data.status == 'N'){
+        //   alert('Some Error Occured');
+        // }
       })
     })
   }
@@ -238,8 +237,6 @@ app.controller('loginController', function ($rootScope, $scope, $http) {
 
 app.controller('JobsController', function($scope, $rootScope, $http) {
   //console.log('JobsController');
-
-
   $scope.addNewSkills = function (resumeForm) {
     //console.log('resumeForm');
     $http.get($rootScope.getIpURL).then(function(res) {
@@ -254,12 +251,13 @@ app.controller('JobsController', function($scope, $rootScope, $http) {
                                                                                 '&skills=' + resumeForm.skills;
       //console.log($scope.addNewSkillsURL);
       $http.get($scope.addNewSkillsURL).then(function(res){
-        if(res.data.status == 'S'){
-           alert('Message Sent Successfully');
-           window.location.reload();
-        } else if (res.data.status == 'N'){
-          alert('Some Error Occured');
-        }
+        $scope.resumeResponse = res;
+        // if(res.data.status == 'S'){
+        //    alert('Message Sent Successfully');
+        //    window.location.reload();
+        // } else if (res.data.status == 'N'){
+        //   alert('Some Error Occured');
+        // }
       })
     })
   }
