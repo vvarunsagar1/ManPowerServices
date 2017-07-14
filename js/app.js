@@ -36,7 +36,7 @@ app.service('fileUpload', ['$http', function ($https) {
 
 app.run(function ($rootScope,$http) {
   //console.log('App Starts');
-  $rootScope.server="http://54.169.84.179/api/";
+  $rootScope.server="http://13.59.139.90/api/";
   // $rootScope.server="http://192.168.42.192/ManPowerServices/api/";
   $rootScope.getIpURL = $rootScope.server+'get_ip.php';
   $rootScope.mobileMenu = 'hide';
